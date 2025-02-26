@@ -5,14 +5,19 @@
 # 🔥 Overview
 
 Ever wondered how strong your password really is? 🤔
+
 This ML-powered Password Strength Checker 🔍 analyzes your password and gives instant feedback on its security level. No more 123456 or password1, okay? 😏
 
 # 🛠 Features
 
 ✅ Machine Learning Powered - Uses RandomForestClassifier to predict password strength.
+
 ✅ Live Strength Prediction - Instantly checks if your password is Weak, Medium, or Strong.
+
 ✅ Interactive UI - A sleek, animated interface that reacts to password strength.
+
 ✅ Emoji Feedback - Because why not? 🎉😐😢
+
 ✅ Fun & Engaging - We make security exciting! 🤩
 
 # 📸 Screenshots
@@ -34,18 +39,26 @@ This ML-powered Password Strength Checker 🔍 analyzes your password and gives 
 
 # Extract password features
 def extract_features(password):
+
     has_lower = any(c.islower() for c in password)
+    
     has_upper = any(c.isupper() for c in password)
+    
     has_special = any(not c.isalnum() for c in password)
+    
     length = len(password)
+    
     return [int(has_lower), int(has_upper), int(has_special), length]
 
 # Make a prediction
 predicted_label = clf.predict([extract_features("P@ssw0rd123")])[0]
+
 prediction = label_encoder.inverse_transform([predicted_label])[0]
+
 print(prediction)  # Output: 'Strong' 💪
 
 # 🤝 Contributing
 
 Got ideas? Found a bug? PRs are totally welcome! 🍕
+
 Let's collaborate..
