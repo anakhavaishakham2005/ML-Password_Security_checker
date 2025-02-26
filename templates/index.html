@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Password Strength Checker</h1>
+        <form method="post" class="password-form">
+            <input type="password" name="password" placeholder="Enter your password (Don't worry,it's encrypted)" required>
+            <button type="submit">Check</button>
+        </form>
+        {% if prediction %}
+            <div class="result {{ prediction|lower }}">
+                <span class="emoji">{{ emoji }}</span>
+                <h2>Prediction: {{ prediction }}</h2>
+                <p>{{ message }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

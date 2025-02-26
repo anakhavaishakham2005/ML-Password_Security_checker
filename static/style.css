@@ -1,0 +1,121 @@
+/* Animated Moving Background */
+body {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    color: #333;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+.title {
+    font-size: 30px;
+    color: #6b3b11;
+    text-align: center;
+    animation: titleAnim 3s ease-in-out infinite;
+}
+
+/* Define the keyframes for animation */
+@keyframes titleAnim {
+    0% {
+        transform: scale(1);
+        color: #6b3b11;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #d35400;
+    }
+    100% {
+        transform: scale(1);
+        color: #6b3b11;
+    }
+}
+
+/* Gradient animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Center container for form */
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Styling for form */
+.password-form input[type="password"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.password-form button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #23a6d5;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.password-form button:hover {
+    background-color: black;
+    border: #23a6d5 3px solid;
+    font-size: x-large;
+}
+
+/* Result styling */
+.result {margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.result h2 {
+    margin: 10px 0;
+}
+
+/* Color themes for each prediction */
+.result.weak {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 3px solid red;
+}
+
+.result.medium {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 3px solid orange;
+}
+
+.result.strong {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(0, 128, 0, 0.2);
+    border: 3px solid green;
+}
+
+/* Emoji animation */
+.emoji {
+    display: inline-block;
+    font-size: 50px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
